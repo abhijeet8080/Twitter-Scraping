@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Scraping </title>
+</head>
+<body>
+    <h1>X Trending Topics</h1>
+    <button onclick="window.location.href='/run-script'">Click here to run the script</button>
+
+    {% if trends %}
+        <h2>These are the most happening topics as on {{ timestamp }}</h2>
+        <ul>
+            <li>{{ trends }}</li>
+        </ul>
+
+        <p>The IP address used for this query was {{ ip_address }}.</p>
+
+        <h3>Here’s a JSON extract of this record from MongoDB:</h3>
+        <pre>{{ json_data }}</pre>
+
+        <button onclick="window.location.href='/run-script'">Click here to run the query again</button>
+    {% endif %}
+</body>
+</html>
